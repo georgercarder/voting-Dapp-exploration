@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Buttons from './Buttons';
 
 class App extends Component {
   render() {
@@ -10,7 +11,8 @@ class App extends Component {
 					<img className='App-logo' src={logo} alt='logo'  />					
           <h1 className="App-title">BlockChain Election</h1>
         </header>
-      </div>
+				<Buttons />
+			</div>
     );
   }
 }
