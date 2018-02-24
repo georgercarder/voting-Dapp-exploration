@@ -1,7 +1,6 @@
 pragma solidity ^0.4.16;
 
 /// @title Voting with delegation.
-
 contract Ballot {
 
   // new complex type. will be used for variables later
@@ -101,4 +100,21 @@ contract Ballot {
     }
   }
 
+  /// Give your vote (including votes delegated to you)
+  /// to proposal 'proposals[proposal].name'.
+  function vote(uint proposal) public {
+    Voter storage sender = voters[msg.sender];
+    require(!sender.voted);
+    sender.voted = true;
+    sender.vote = proposal;
+
+    // If 'proposal' is out of the range of the array,
+    // this will throw automatically and revert all
+    // changes.
+    proposals[proposal].voteCount += sender.weight;
+  }
+
+  /// @dev Computes the winning proposal taking all 
+  /// previous votes into account.
+  
 }
