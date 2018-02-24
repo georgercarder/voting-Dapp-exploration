@@ -27,8 +27,8 @@
 .button {
   position: relative;
   background-color: #4CAF50;
-  border: none;
-  font-size: 28px;
+  border: 2px solid white;
+  font-size: 14px;
   color: #FFFFFF;
   padding: 20px;
   width: 200px;
