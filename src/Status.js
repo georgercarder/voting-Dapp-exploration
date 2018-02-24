@@ -5,7 +5,7 @@ class Status extends Component {
     return (
       <div className="App">
           <h1 className="App-title">Hello Status</h1>
-			</div>
+      </div>
     );
   }
 }
