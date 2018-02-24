@@ -116,5 +116,14 @@ contract Ballot {
 
   /// @dev Computes the winning proposal taking all 
   /// previous votes into account.
-  
+  function winningProposal() public view
+    returns (uint winningProposal) {
+      uint winningVoteCount = 0;
+      for (uint p = 0; p < proposals.length; p++) {
+        if (proposals[p].voteCount > winningVoteCount) {
+          winningVoteCount = proposals[p].voteCount;
+          winningProposal = p;
+        }
+      }
+    }  
 }
